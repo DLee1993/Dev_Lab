@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const inter = Inter_Tight({
     subsets: ["latin", "latin-ext"],
@@ -95,10 +96,11 @@ export default function RootLayout({
                     }}
                 />
             </head>
-            <body className={`min-h-screen bg-cs-white text-cs-black antialiased ${inter.className}`}>
-                <main className="min-h-screen">
-                    {children}
-                </main>
+            <body
+                className={`min-h-screen bg-cs-white text-cs-black antialiased ${inter.className}`}
+            >
+                <Header />
+                <main className="min-h-screen">{children}</main>
             </body>
         </html>
     );

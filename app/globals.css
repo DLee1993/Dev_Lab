@@ -3,6 +3,8 @@
 @theme {
     /* Colors */
     --color-cs-white: #f5f5f5;
-    --color-cs-black: #181818;
+    --color-cs-black: #303030;
     --color-cs-accent: #eca72c;
+    --font-inter: "var(--font-inter)";
+    --font-antonio: "var(--font-antonio)";
 }

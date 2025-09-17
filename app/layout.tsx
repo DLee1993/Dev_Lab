@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
-import { Inter_Tight } from "next/font/google";
+import { Inter, Antonio } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
-const inter = Inter_Tight({
+const inter = Inter({
     subsets: ["latin", "latin-ext"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    style: ["normal", "italic"],
+    variable: "--font-inter-tight",
+});
+
+const antonio = Antonio({
+    subsets: ["latin", "latin-ext"],
+    weight: ["400", "700"],
+    style: ["normal"],
+    variable: "--font-antonio",
 });
 
 export const metadata: Metadata = {
@@ -97,10 +106,12 @@ export default function RootLayout({
                 />
             </head>
             <body
-                className={`min-h-screen bg-cs-white text-cs-black antialiased ${inter.className}`}
+                className={`min-h-screen bg-cs-white text-cs-black antialiased font-inter ${inter.variable} ${antonio.variable}`}
             >
-                <Header />
-                <main className="min-h-screen">{children}</main>
+                <main className="min-h-screen p-2">
+                    <Header />
+                    {children}
+                </main>
             </body>
         </html>
     );
